@@ -1,5 +1,5 @@
 # Listview: App Tienda de Ropa
-<img src="captura2.png" width=100 height=100>
+<img src="captura2.png" width=300 height=600>
 Se desarrolló una aplicación móvil en Android que consume datos desde un servicio web RESTful y muestra la información en un `ListView`. La fuente de datos utilizada es la API pública:
 
 - **Lista de Productos:** [https://fakestoreapi.com/products](https://fakestoreapi.com/products)
