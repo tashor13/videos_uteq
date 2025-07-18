@@ -11,7 +11,6 @@ import androidx.core.view.WindowInsetsCompat;
 
 import org.json.JSONArray;
 import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -34,9 +33,9 @@ public class MainActivity extends AppCompatActivity implements Asynchtask
             return insets;
         });
         Map<String, String> datos = new HashMap<String, String>();
-        WebService ws= new WebService("https://fakestoreapi.com/products",
+        WebService ws= new WebService("https://apiws.uteq.edu.ec/h6RPoSoRaah0Y4Bah28eew/functions/information/entity/3",
                 datos, MainActivity.this, MainActivity.this);
-        ws.execute("GET");
+        ws.execute("GET" , "Bearer ", "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJfeDF1c2VyZGV2IiwiaWF0IjoxNzUyODY4NjIwLCJleHAiOjE3NTI5NTUwMjB9.tZPdC3XwEOhgHZz_QFk5TQa2SrFXimlgVSFa6cwhiwY");
     }
 
         @Override
@@ -45,11 +44,11 @@ public class MainActivity extends AppCompatActivity implements Asynchtask
 
             JSONArray JSONlistaUsuarios=  new JSONArray(result);
 
-            ArrayList<Producto> lstProductos = Producto.JsonObjectsBuild(JSONlistaUsuarios);
+            ArrayList<video> lstVideos = video.JsonObjectsBuild(JSONlistaUsuarios);
 
-            AdaptadorProductos adapatorProducto = new AdaptadorProductos(this, lstProductos);
+            Adaptadorvideos adapatorvideos = new Adaptadorvideos(this, lstVideos);
 
-            lstListaUsuario.setAdapter(adapatorProducto);
+            lstListaUsuario.setAdapter(adapatorvideos);
 
         }
     }
